@@ -1,4 +1,5 @@
 # White Knuckle Assembly References
+[![Publish to NuGet.org](https://github.com/monksilly/White-Knuckle-References/actions/workflows/publish-refs.yml/badge.svg?branch=master)](https://github.com/monksilly/White-Knuckle-References/actions/workflows/publish-refs.yml)
 
 This repository contains the publicized and stripped reference assemblies for the game White Knuckle. These files are provided to assist the modding community in building C# BepInEx mods targeting .NET Standard 2.1. 
 
@@ -45,7 +46,6 @@ To always target the latest available version of the game libraries, you can use
 <ItemGroup>
   <PackageReference Include="WhiteKnuckle.GameLibs" Version="0.55.*"/>
 </ItemGroup>
-
 ```
 
 ## Version Mapping

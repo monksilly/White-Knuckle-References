@@ -33,23 +33,9 @@ These DLLs (such as `Assembly-CSharp.dll`) have been processed using a publicize
 
 ## How to Use
 
-These references are packaged and distributed automatically via GitHub Packages as NuGet dependencies. 
+These references are packaged and distributed automatically via GitHub Packages as NuGet dependencies.
 
-### 1. Configure your nuget.config
-To pull these assemblies into your mod project, add a `nuget.config` file to the root directory of your mod's repository:
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<configuration>
-  <packageSources>
-    <clear />
-    <add key="nuget.org" value="https://api.nuget.org/v3/index.json" />
-    <add key="monksilly-feed" value="https://nuget.pkg.github.com/monksilly/index.json" />
-  </packageSources>
-</configuration>
-```
-
-### 2. Reference the Package
+### Reference the Package
 
 Add the following package reference to your mod's `.csproj` file.
 

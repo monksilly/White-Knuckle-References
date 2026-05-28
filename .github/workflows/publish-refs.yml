@@ -3,6 +3,11 @@ name: Publish to NuGet.org
 on:
   push:
     branches: [ master ]
+    paths:
+      - '**/*.csproj'   # Trigger if any project file changes
+      - '**/*.dll'      # Trigger if you swap out a DLL in a version folder
+      - '!README.md'    # Explicitly DO NOT trigger for README changes
+      - '!LICENSE'      # Explicitly DO NOT trigger for License changes
 
 jobs:
   deploy:

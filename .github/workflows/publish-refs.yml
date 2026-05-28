@@ -1,0 +1,35 @@
+name: Publish to NuGet.org
+
+on:
+  push:
+    branches: [ master ]
+    paths:
+      - '**/GameRefs.csproj' # Only trigger if a version project changes
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '6.0.x'
+
+      - name: Pack and Push
+        shell: bash
+        run: |
+          for dir in $(find . -maxdepth 2 -name "GameRefs.csproj" -printf '%h\n' | sort -u); do
+            echo "Building package in $dir..."
+          
+            dotnet pack "$dir/GameRefs.csproj" -c Release --output ./dist
+          
+            dotnet nuget push "./dist/*.nupkg" \
+              --api-key ${{ secrets.NUGET_API_KEY }} \
+              --source https://api.nuget.org/v3/index.json \
+              --skip-duplicate
+          
+            rm -rf ./dist
+          done

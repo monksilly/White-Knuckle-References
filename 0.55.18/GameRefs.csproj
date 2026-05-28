@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <PackageId>WhiteKnuckle.GameLibs</PackageId>
+        <Version>0.55.18</Version>
+        <Authors>monksilly</Authors>
+        <Company>monksilly</Company>
+        <Description>Publicized and stripped assembly references for White Knuckle mod development. Maintained by the monksilly team with explicit permission from Dark Machine Games.</Description>
+        <Copyright>Copyright © Dark Machine Games. All rights reserved.</Copyright>
+        
+        <!-- NuGet.org stuff -->
+        <PackageProjectUrl>https://github.com/monksilly/White-Knuckle-Reference</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/monksilly/White-Knuckle-Reference</RepositoryUrl>
+        <PackageTags>WhiteKnuckle;Modding;BepInEx;DarkMachineGames</PackageTags>
+    </PropertyGroup>
+
+    
+    <ItemGroup>
+        <None Include="*.dll" Pack="true" PackagePath="lib\netstandard2.1" />
+    </ItemGroup>
+</Project>
